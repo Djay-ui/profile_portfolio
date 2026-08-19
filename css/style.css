@@ -8,7 +8,7 @@
   --accent-cyan: #00f0ff;
   --border-color: #1f2937;
   --font-mono: 'Fira Code', monospace;
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
 }
 
 * {
@@ -26,7 +26,7 @@ body {
   position: relative;
 }
 
-/* Matrix Background Canvas */
+/* Canvas Background */
 #matrixCanvas {
   position: fixed;
   top: 0;
@@ -34,10 +34,9 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -2;
-  opacity: 0.15;
+  opacity: 0.18;
 }
 
-/* Scanline visual overlay */
 .scanline-overlay {
   position: fixed;
   top: 0;
@@ -50,7 +49,7 @@ body {
   pointer-events: none;
 }
 
-/* Glow effects for cards */
+/* Glow Card Animation */
 .glow-box {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -90,7 +89,6 @@ body {
   font-family: var(--font-mono);
   color: var(--accent-green);
   font-weight: 700;
-  text-decoration: none;
 }
 
 .blink {
@@ -194,11 +192,7 @@ body {
   position: relative;
 }
 
-.buttons {
-  display: flex;
-  gap: 0.4rem;
-}
-
+.buttons { display: flex; gap: 0.4rem; }
 .btn-circle { width: 12px; height: 12px; border-radius: 50%; }
 .red { background: #ff5f56; }
 .yellow { background: #ffbd2e; }
@@ -220,13 +214,11 @@ body {
 
 .prompt { color: var(--accent-cyan); }
 
-/* Glitch Title */
 .glitch-text {
   font-size: 2.8rem;
   color: #fff;
   font-weight: 700;
   margin: 0.3rem 0;
-  position: relative;
 }
 
 .typewriter-text {
@@ -248,7 +240,7 @@ body {
   gap: 1rem;
 }
 
-/* Section styling */
+/* Layout Sections */
 .section {
   max-width: 1000px;
   margin: 0 auto;
@@ -283,7 +275,7 @@ body {
   border-radius: 4px;
 }
 
-/* Experience Timeline */
+/* Timeline */
 .timeline-item { padding: 2rem; }
 
 .timeline-header h3 {
@@ -321,7 +313,7 @@ body {
   margin-top: 0.3rem;
 }
 
-/* Skills & Projects Grid */
+/* Grids */
 .skills-grid, .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

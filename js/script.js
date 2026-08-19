@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // --- 1. Matrix Background Canvas Effect ---
+  // Matrix Rain Background Canvas Effect
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
-  const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
   const fontSize = 14;
   const columns = Math.floor(canvas.width / fontSize);
   const drops = Array(columns).fill(1);
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   setInterval(drawMatrix, 33);
 
-  // --- 2. Typewriter Effect ---
+  // Typewriter Terminal Animation
   const roles = [
     "Application Security Engineer",
     "Ethical Hacker & Pentester",
-    "DevSecOps Practitioner",
-    "Network Security Specialist"
+    "DevSecOps Specialist",
+    "Network Security Engineer"
   ];
   let roleIndex = 0;
   let charIndex = 0;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let typeSpeed = isDeleting ? 40 : 80;
 
     if (!isDeleting && charIndex === currentRole.length) {
-      typeSpeed = 2000; // Pause at full word
+      typeSpeed = 2000;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   typeEffect();
 
-  // --- 3. Smooth Scrolling ---
+  // Smooth Scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
