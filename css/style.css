@@ -5,7 +5,7 @@
   --text-main: #e6edf3;
   --text-muted: #8b949e;
   --accent-green: #00ff66;
-  --accent-cyan: #00f0ff;
+  --accent-cyan: #12d6b1;
   --border-color: #1f2937;
   --font-mono: 'Fira Code', monospace;
   --font-sans: 'Poppins', sans-serif;
@@ -49,7 +49,7 @@ body {
   pointer-events: none;
 }
 
-/* Glow Card Animation */
+/* Base Card Glow Animation */
 .glow-box {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -122,7 +122,7 @@ body {
   color: var(--accent-cyan);
 }
 
-/* Buttons */
+/* Navigation Buttons */
 .btn {
   font-family: var(--font-mono);
   padding: 0.65rem 1.25rem;
@@ -165,7 +165,7 @@ body {
 .btn-secondary:hover {
   border-color: var(--accent-cyan);
   color: var(--accent-cyan);
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 12px rgba(18, 214, 177, 0.3);
 }
 
 /* Hero Section */
@@ -192,8 +192,17 @@ body {
   position: relative;
 }
 
-.buttons { display: flex; gap: 0.4rem; }
-.btn-circle { width: 12px; height: 12px; border-radius: 50%; }
+.buttons { 
+  display: flex; 
+  gap: 0.4rem; 
+}
+
+.btn-circle { 
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%; 
+}
+
 .red { background: #ff5f56; }
 .yellow { background: #ffbd2e; }
 .green { background: #27c93f; }
@@ -240,7 +249,7 @@ body {
   gap: 1rem;
 }
 
-/* Layout Sections */
+/* Section Layouts */
 .section {
   max-width: 1000px;
   margin: 0 auto;
@@ -266,7 +275,7 @@ body {
 }
 
 .badge {
-  background: rgba(0, 240, 255, 0.08);
+  background: rgba(18, 214, 177, 0.08);
   border: 1px solid var(--accent-cyan);
   color: var(--accent-cyan);
   padding: 0.4rem 0.8rem;
@@ -354,36 +363,18 @@ body {
   margin-top: 1.2rem;
 }
 
-.contact-card { padding: 3rem 2rem; }
-.text-center { text-align: center; }
-
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-color);
-}
-
-
-
-/* Contact Section Base with Grid Pattern Background */
+/* ==========================================================================
+   Contact Section (Scoped Exact Match To Reference Layout)
+   ========================================================================== */
 .contact-section {
   position: relative;
+  width: 100%;
   background-color: #080c10;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 30px 30px;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem 5rem;
   font-family: 'Fira Code', monospace;
 }
 
@@ -391,7 +382,6 @@ footer {
   text-align: center;
 }
 
-/* Header Text */
 .section-tag {
   color: #12d6b1;
   font-size: 0.95rem;
@@ -403,18 +393,18 @@ footer {
   color: #ffffff;
   font-size: 2.8rem;
   font-weight: 700;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 0.8rem;
 }
 
 .contact-subtitle {
   color: #8b949e;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 3rem;
 }
 
-/* Terminal Contact Card */
+/* Terminal Contact Container */
 .terminal-contact-card {
   max-width: 680px;
   margin: 0 auto 2.5rem;
@@ -434,34 +424,20 @@ footer {
   position: relative;
 }
 
-.buttons {
-  display: flex;
-  gap: 0.45rem;
-}
-
-.btn-circle {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
 .terminal-contact-header .title {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.82rem;
   color: #6e7681;
+  font-family: 'Fira Code', monospace;
 }
 
 .terminal-contact-body {
   padding: 1.5rem 2.2rem;
 }
 
-/* Row Dividers */
+/* Contact Item Rows */
 .contact-row {
   display: flex;
   align-items: center;
@@ -477,6 +453,7 @@ footer {
   width: 140px;
   color: #546072;
   font-size: 0.95rem;
+  font-family: 'Fira Code', monospace;
 }
 
 .contact-row .val {
@@ -484,6 +461,7 @@ footer {
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
+  font-family: 'Fira Code', monospace;
   transition: color 0.2s ease;
 }
 
@@ -514,4 +492,14 @@ footer {
   background-color: #0fc2a0;
   box-shadow: 0 6px 20px rgba(18, 214, 177, 0.4);
   transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  background-color: #03070d;
 }
