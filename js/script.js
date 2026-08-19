@@ -3,9 +3,9 @@
    (everything else on the page is generated from the arrays below)
 ========================================================= */
 const PROFILE = {
-  linkedin: "https://www.linkedin.com/in/REPLACE-WITH-YOUR-HANDLE", // TODO: paste your real LinkedIn URL
+  linkedin: "https://www.linkedin.com/in/dhananjay-tupe", // TODO: paste your real LinkedIn URL
   github:   "https://github.com/Djay-ui",
-  medium:   "https://medium.com/@REPLACE-WITH-YOUR-HANDLE",         // TODO: paste your real Medium URL
+  medium:   "https://medium.com/@dhananjaytupe748",         // TODO: paste your real Medium URL
 };
 
 const ARSENAL = [
@@ -206,4 +206,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNav();
   runBoot();
   document.getElementById("year").textContent = new Date().getFullYear();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('%c[+] Security System Initialized...', 'color: #00ff66; font-family: monospace; font-size: 14px;');
+  console.log('%c[+] Dhananjay Tupe Portfolio Loaded Successfully.', 'color: #00f0ff; font-family: monospace;');
+
+  // Smooth Scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });
