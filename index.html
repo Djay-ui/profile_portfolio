@@ -3,52 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhananjay Tupe | Cybersecurity & Ethical Hacking Portfolio</title>
+  <title>Dhananjay Tupe | Application Security Engineer & Ethical Hacker</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Matrix Canvas Background -->
+  <canvas id="matrixCanvas"></canvas>
+  <div class="scanline-overlay"></div>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo"><span class="prompt">root@dhananjay:~#</span></a>
+      <a href="#" class="logo"><span class="prompt">dhananjay@sec-ops:~$</span> <span class="blink">_</span></a>
       <ul class="nav-menu">
         <li><a href="#about"><span class="num">01.</span> /about</a></li>
-        <li><a href="#skills"><span class="num">02.</span> /skills</a></li>
-        <li><a href="#projects"><span class="num">03.</span> /projects</a></li>
-        <li><a href="#contact"><span class="num">04.</span> /contact</a></li>
+        <li><a href="#experience"><span class="num">02.</span> /experience</a></li>
+        <li><a href="#skills"><span class="num">03.</span> /skills</a></li>
+        <li><a href="#projects"><span class="num">04.</span> /projects</a></li>
+        <li><a href="#contact"><span class="num">05.</span> /contact</a></li>
       </ul>
-      <!-- Working Resume Download Button -->
       <a href="assets/Dhananjay_tupe_23_july_2026.pdf" download="Dhananjay_Tupe_Resume.pdf" class="btn btn-nav">
         <i class="fa-solid fa-file-arrow-down"></i> Resume
       </a>
     </div>
   </nav>
 
-  <!-- Hero / Terminal Section -->
+  <!-- Hero Section -->
   <header class="hero">
-    <div class="terminal-card">
+    <div class="terminal-card glow-box">
       <div class="terminal-header">
         <div class="buttons">
           <span class="btn-circle red"></span>
           <span class="btn-circle yellow"></span>
           <span class="btn-circle green"></span>
         </div>
-        <div class="title">bash - 80x24</div>
+        <div class="title">sec-console — zsh — 80x24</div>
       </div>
       <div class="terminal-body">
-        <p><span class="prompt">guest@sec-ops:~$</span> whoami</p>
-        <h1 class="glitch-text">Dhananjay Tupe</h1>
-        <p><span class="prompt">guest@sec-ops:~$</span> cat role.txt</p>
-        <p class="highlight-text">> Cybersecurity Analyst & Ethical Hacker</p>
-        <p><span class="prompt">guest@sec-ops:~$</span> ./status.sh</p>
-        <p class="status-output">[+] Penetration Testing | Vulnerability Assessment | Network Defense</p>
+        <p><span class="prompt">root@dhananjay:~#</span> target --identify</p>
+        <h1 class="glitch-text" data-text="Dhananjay Tupe">Dhananjay Tupe</h1>
+        <p><span class="prompt">root@dhananjay:~#</span> cat designation.txt</p>
+        <p class="typewriter-text"><span id="typewriter"></span><span class="cursor">|</span></p>
+        <p><span class="prompt">root@dhananjay:~#</span> ./check_status.sh</p>
+        <p class="status-output">[+] SPECIALIZATION: VAPT | DevSecOps Pipelines | AppSec | Network Hardening</p>
+        <p class="status-output">[+] CONTACT: +91 94201 21964 | djaytupe@gmail.com</p>
         <div class="terminal-actions">
-          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-terminal"></i> View Operations</a>
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-terminal"></i> View Security Operations</a>
           <a href="assets/Dhananjay_tupe_23_july_2026.pdf" download="Dhananjay_Tupe_Resume.pdf" class="btn btn-secondary">
-            <i class="fa-solid fa-download"></i> Download CV
+            <i class="fa-solid fa-download"></i> Download Resume
           </a>
         </div>
       </div>
@@ -58,65 +63,121 @@
   <!-- About Section -->
   <section id="about" class="section">
     <h2 class="section-title"><span>01.</span> About Me</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>Welcome to my security operations console. I am a dedicated <strong>Ethical Hacker & Security Engineer</strong> focused on identifying system vulnerabilities, securing network infrastructures, and executing defensive security protocols.</p>
-        <p>Driven by a passion for offensive security and threat hunting, I build and analyze tools to keep digital assets secure against modern threats.</p>
+    <div class="about-card glow-box">
+      <p>Cybersecurity professional specializing in <strong>Application Security, VAPT, and DevSecOps</strong> practices. Experienced in identifying, analyzing, and mitigating application security vulnerabilities using industry-standard tools, with a solid foundation in Secure SDLC and cloud-native security.</p>
+      <div class="cert-badges">
+        <span class="badge"><i class="fa-solid fa-certificate"></i> OffSec & Ethical Hacking (Blackhat)</span>
+        <span class="badge"><i class="fa-solid fa-certificate"></i> CompTIA Ethical Hacking</span>
+        <span class="badge"><i class="fa-solid fa-user-shield"></i> CEH-Master (Pursuing)</span>
+        <span class="badge"><i class="fa-solid fa-graduation-cap"></i> CDAC DITISS (2023)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2 class="section-title"><span>02.</span> Work Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item glow-box">
+        <div class="timeline-header">
+          <h3>Application Security Engineer / Network Engineer</h3>
+          <span class="company">TeleGlobal Communications Private Limited, Pune</span>
+          <span class="date">Sept 2023 — Present</span>
+        </div>
+        <ul class="exp-list">
+          <li><i class="fa-solid fa-caret-right"></i> Conducted web application penetration testing using <strong>Burp Suite & OWASP ZAP</strong> to uncover major OWASP vulnerabilities like XSS, XML, IDOR, and SQL Injections.</li>
+          <li><i class="fa-solid fa-caret-right"></i> Integrated <strong>SonarQube & OWASP Dependency Check</strong> inside Jenkins pipelines for automated SAST and dependency scanning.</li>
+          <li><i class="fa-solid fa-caret-right"></i> Executed VAPT on network devices (switches, routers, Mikrotik systems), uncovering configuration weaknesses via controlled brute-force testing.</li>
+          <li><i class="fa-solid fa-caret-right"></i> Conducted OS hardening on client servers following <strong>CIS Benchmarks</strong> and enforced network-level security protocols.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
-    <h2 class="section-title"><span>02.</span> Security Capabilities</h2>
+    <h2 class="section-title"><span>03.</span> Technical Arsenal</h2>
     <div class="skills-grid">
-      <div class="skill-card">
-        <i class="fa-solid fa-user-ninja skill-icon"></i>
-        <h3>Penetration Testing</h3>
-        <p>Web app security testing, network vulnerability assessments, and exploitation.</p>
+      <div class="skill-card glow-box">
+        <i class="fa-solid fa-bug skill-icon"></i>
+        <h3>VAPT Tools</h3>
+        <p>OWASP ZAP, Burp Suite, Nessus, Nikto, Nmap, Trivy</p>
       </div>
-      <div class="skill-card">
-        <i class="fa-solid fa-shield-halved skill-icon"></i>
-        <h3>Network Security</h3>
-        <p>Wireshark analysis, firewall configuration, intrusion detection, and defense strategies.</p>
+      <div class="skill-card glow-box">
+        <i class="fa-solid fa-code-compare skill-icon"></i>
+        <h3>Code Security (SAST/DAST)</h3>
+        <p>SonarQube, OWASP Dependency Check, CIS Benchmarks</p>
       </div>
-      <div class="skill-card">
-        <i class="fa-solid fa-code skill-icon"></i>
-        <h3>Security Tools</h3>
-        <p>Nmap, Metasploit, Burp Suite, Kali Linux, and custom Python exploits.</p>
+      <div class="skill-card glow-box">
+        <i class="fa-solid fa-infinity skill-icon"></i>
+        <h3>DevSecOps & Cloud</h3>
+        <p>Jenkins, Docker, Kubernetes, AWS, GCP, Git, Bash</p>
+      </div>
+      <div class="skill-card glow-box">
+        <i class="fa-solid fa-chart-line skill-icon"></i>
+        <h3>SIEM & Monitoring</h3>
+        <p>OSSEC, Splunk, Grafana, Prometheus</p>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="section">
-    <h2 class="section-title"><span>03.</span> Security Projects</h2>
+    <h2 class="section-title"><span>04.</span> Featured Security Projects</h2>
     <div class="projects-grid">
-      <div class="project-card">
+      
+      <div class="project-card glow-box">
         <div class="project-header">
-          <i class="fa-regular fa-folder-open folder-icon"></i>
-          <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <i class="fa-solid fa-shield-cat folder-icon"></i>
+          <span class="project-tag">DevSecOps</span>
         </div>
-        <h3>Vulnerability Scanner</h3>
-        <p>Custom Python-based automated network scanner targeting port vulnerabilities and weak service configs.</p>
+        <h3>DevSecOps Pipeline Security - Netflix Clone</h3>
+        <p>Designed an automated secure CI/CD pipeline in Jenkins. Integrated SonarQube (SAST) & Trivy container image scanning. Deployed secure builds on AWS & Kubernetes with live Grafana monitoring and automated build alert triggers.</p>
         <ul class="tech-stack">
-          <li>Python</li>
-          <li>Nmap API</li>
-          <li>Linux</li>
+          <li>AWS</li>
+          <li>Jenkins</li>
+          <li>SonarQube</li>
+          <li>Trivy</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Grafana</li>
         </ul>
       </div>
+
+      <div class="project-card glow-box">
+        <div class="project-header">
+          <i class="fa-solid fa-crosshairs folder-icon"></i>
+          <span class="project-tag">Web VAPT</span>
+        </div>
+        <h3>Web Application VAPT - DVWA</h3>
+        <p>Executed full-scope penetration testing targeting OWASP Top 10 vulnerabilities (Injections, XSS, Broken Auth, Misconfigurations). Configured OSSEC for real-time intrusion detection, log analysis, and generated comprehensive VAPT remediation reports.</p>
+        <ul class="tech-stack">
+          <li>DVWA</li>
+          <li>Burp Suite</li>
+          <li>OWASP ZAP</li>
+          <li>OSSEC</li>
+          <li>Ubuntu</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section">
-    <h2 class="section-title"><span>04.</span> Establish Connection</h2>
-    <p class="contact-sub">My inbox is always open for security discussions, bug hunting, or collaboration opportunities.</p>
-    <a href="mailto:your-email@example.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Encrypted Signal</a>
+    <div class="contact-card glow-box text-center">
+      <h2 class="section-title"><span>05.</span> Initialize Transmission</h2>
+      <p>I am actively seeking Application Security Engineer and Ethical Hacker roles. Reach out directly:</p>
+      <div class="contact-buttons">
+        <a href="mailto:djaytupe@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
+        <a href="https://linkedin.com" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>Designed & Built by Dhananjay Tupe | Secured with Green-Terminal Theme</p>
+    <p>Constructed by <strong>Dhananjay Tupe</strong> | SecOps Red-Green Interface</p>
   </footer>
 
   <script src="js/script.js"></script>

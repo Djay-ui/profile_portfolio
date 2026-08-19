@@ -1,226 +1,85 @@
-/* =========================================================
-   EDIT ME — your real profile links
-   (everything else on the page is generated from the arrays below)
-========================================================= */
-const PROFILE = {
-  linkedin: "https://www.linkedin.com/in/dhananjay-tupe", // TODO: paste your real LinkedIn URL
-  github:   "https://github.com/Djay-ui",
-  medium:   "https://medium.com/@dhananjaytupe748",         // TODO: paste your real Medium URL
-};
-
-const ARSENAL = [
-  { title: "VAPT Tools", icon: "VA", tools: ["OWASP ZAP", "Burp Suite", "Nessus", "Nikto", "Nmap", "Trivy"] },
-  { title: "Static / Dynamic Analysis", icon: "SA", tools: ["SonarQube"] },
-  { title: "Security Monitoring", icon: "SM", tools: ["OSSEC", "Splunk", "Grafana"] },
-  { title: "Container Security", icon: "CS", tools: ["Docker", "Kubernetes", "GKE"] },
-  { title: "CI/CD Security Integration", icon: "CI", tools: ["Git", "Jenkins", "Grafana", "Prometheus", "Bash"] },
-  { title: "Protocols & Network Security", icon: "NS", tools: ["TCP/IP", "HTTP/HTTPS", "SSL/TLS", "IPsec"] },
-  { title: "Cloud Platforms", icon: "CL", tools: ["AWS", "GCP"] },
-];
-
-const REPORTS = [
-  {
-    id: "ENG-01",
-    title: "Web Application VAPT — DVWA",
-    severity: "Critical",
-    scope: "Full-scope penetration test targeting the OWASP Top 10 on a deliberately vulnerable web app.",
-    approach: [
-      "Simulated real-world attack paths across injection, XSS and broken authentication",
-      "Integrated OSSEC for intrusion detection, alerting and log analysis during testing",
-      "Documented risk severity, exploitation steps and remediation for every finding",
-    ],
-    tools: ["DVWA", "Burp Suite", "OWASP ZAP", "OSSEC", "Ubuntu"],
-    status: "Report delivered",
-  },
-  {
-    id: "ENG-02",
-    title: "DevSecOps Pipeline Security — Netflix Clone",
-    severity: "High",
-    scope: "Designed and secured a CI/CD pipeline end-to-end, from commit to production monitoring.",
-    approach: [
-      "Built a Jenkins pipeline with SAST (SonarQube) and container scanning (Trivy) as required gates",
-      "Deployed hardened builds to AWS and Kubernetes with live monitoring in Grafana",
-      "Added email alerting on build and vulnerability events to speed up incident response",
-    ],
-    tools: ["AWS", "Jenkins", "SonarQube", "Docker", "Kubernetes", "Trivy", "Grafana"],
-    status: "Live write-up",
-    link: null, // TODO: paste your Medium article URL here, e.g. "https://medium.com/@you/netflix-clone-secure-ci-cd-pipeline"
-    linkLabel: "Read the write-up",
-  },
-];
-
-const CERTS = [
-  { title: "Offensive Security & Ethical Hacking", meta: "Blackhat", icon: "①" },
-  { title: "CompTIA Ethical Hacking", meta: "CompTIA", icon: "②" },
-  { title: "Certified Ethical Hacker — CEH (Master)", meta: "Pursuing", icon: "③" },
-  { title: "TryHackMe · Hack The Box · Bugcrowd", meta: "Active challenge participant", icon: "④" },
-];
-
-/* =========================================================
-   RENDERERS
-========================================================= */
-function renderArsenal(){
-  const grid = document.getElementById("arsenalGrid");
-  grid.innerHTML = ARSENAL.map(group => `
-    <div class="arsenal-card">
-      <div class="arsenal-card__head">
-        <span class="arsenal-card__icon">${group.icon}</span>
-        <span class="arsenal-card__title">${group.title}</span>
-      </div>
-      <div class="arsenal-card__tools">
-        ${group.tools.map(t => `<span class="tool-pill">${t}</span>`).join("")}
-      </div>
-    </div>
-  `).join("");
-}
-
-function renderReports(){
-  const grid = document.getElementById("reportGrid");
-  grid.innerHTML = REPORTS.map(r => `
-    <article class="report-card">
-      <div class="report-card__head">
-        <div>
-          <span class="report-card__id">${r.id}</span>
-          <h3 class="report-card__title">${r.title}</h3>
-        </div>
-        <span class="sev sev--${r.severity.toLowerCase()}">${r.severity} impact</span>
-      </div>
-      <div class="report-card__body">
-        <div class="report-card__row">
-          <span class="report-card__label">SCOPE</span>
-          <p class="report-card__text">${r.scope}</p>
-        </div>
-        <div class="report-card__row">
-          <span class="report-card__label">APPROACH</span>
-          <ul class="report-card__text">
-            ${r.approach.map(a => `<li>${a}</li>`).join("")}
-          </ul>
-        </div>
-        <div class="report-card__row">
-          <span class="report-card__label">TOOLING</span>
-          <div class="report-card__tools">
-            ${r.tools.map(t => `<span class="tool-pill">${t}</span>`).join("")}
-          </div>
-        </div>
-        <div class="report-card__footer">
-          ${r.link
-            ? `<a class="report-card__link" href="${r.link}" target="_blank" rel="noopener">${r.linkLabel || "View details"} →</a>`
-            : `<span class="report-card__status">${r.status}</span>`
-          }
-          ${r.link ? `<span class="report-card__status">${r.status}</span>` : ""}
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderCerts(){
-  const grid = document.getElementById("certGrid");
-  grid.innerHTML = CERTS.map(c => `
-    <div class="cert-card">
-      <span class="cert-card__icon">${c.icon}</span>
-      <div>
-        <p class="cert-card__title">${c.title}</p>
-        <p class="cert-card__meta">${c.meta}</p>
-      </div>
-    </div>
-  `).join("");
-}
-
-function wireContactLinks(){
-  document.getElementById("linkedinLink").href = PROFILE.linkedin;
-  document.getElementById("githubLink").href = PROFILE.github;
-  document.getElementById("mediumLink").href = PROFILE.medium;
-}
-
-/* =========================================================
-   BOOT SEQUENCE
-========================================================= */
-function runBoot(){
-  const overlay = document.getElementById("boot-overlay");
-  if (!overlay) return;
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion){ overlay.classList.add("is-done"); return; }
-
-  const lines = overlay.querySelectorAll(".boot-line");
-  let delay = 150;
-  lines.forEach((line, i) => {
-    const text = line.dataset.text || "";
-    const duration = Math.max(500, text.length * 28);
-    line.style.transitionProperty = "width";
-    line.style.transitionDuration = duration + "ms";
-    line.style.transitionTimingFunction = "steps(" + text.length + ")";
-    setTimeout(() => { line.style.width = "100%"; }, delay);
-    delay += duration + 180;
-  });
-
-  setTimeout(() => overlay.classList.add("is-done"), delay + 400);
-}
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-function setupReveal(){
-  const targets = document.querySelectorAll(
-    ".section__head, .section__body, .arsenal-card, .timeline__item, .report-card, .cert-card, .edu-block, .contact-panel"
-  );
-  targets.forEach(el => el.classList.add("reveal"));
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-
-  targets.forEach(el => io.observe(el));
-}
-
-/* =========================================================
-   NAV: active link + mobile burger
-========================================================= */
-function setupNav(){
-  const burger = document.getElementById("navBurger");
-  const links = document.querySelector(".nav__links");
-  if (burger && links){
-    burger.addEventListener("click", () => {
-      const open = links.style.display === "flex";
-      links.style.display = open ? "none" : "flex";
-      burger.setAttribute("aria-expanded", String(!open));
-    });
-  }
-}
-
-/* =========================================================
-   INIT
-========================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-  renderArsenal();
-  renderReports();
-  renderCerts();
-  wireContactLinks();
-  setupReveal();
-  setupNav();
-  runBoot();
-  document.getElementById("year").textContent = new Date().getFullYear();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('%c[+] Security System Initialized...', 'color: #00ff66; font-family: monospace; font-size: 14px;');
-  console.log('%c[+] Dhananjay Tupe Portfolio Loaded Successfully.', 'color: #00f0ff; font-family: monospace;');
+  
+  // --- 1. Matrix Background Canvas Effect ---
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
 
-  // Smooth Scrolling for anchor links
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+  const fontSize = 14;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(3, 7, 13, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00ff66';
+    ctx.font = `${fontSize}px 'Fira Code', monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars.charAt(Math.floor(Math.random() * chars.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+  setInterval(drawMatrix, 33);
+
+  // --- 2. Typewriter Effect ---
+  const roles = [
+    "Application Security Engineer",
+    "Ethical Hacker & Pentester",
+    "DevSecOps Practitioner",
+    "Network Security Specialist"
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typewriterElement = document.getElementById('typewriter');
+
+  function typeEffect() {
+    const currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+      typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      typeSpeed = 2000; // Pause at full word
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+  }
+  typeEffect();
+
+  // --- 3. Smooth Scrolling ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
