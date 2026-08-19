@@ -3,9 +3,9 @@
    (everything else on the page is generated from the arrays below)
 ========================================================= */
 const PROFILE = {
-  linkedin: "https://www.linkedin.com/in/REPLACE-WITH-YOUR-HANDLE", // TODO: paste your real LinkedIn URL
+  linkedin: "https://www.linkedin.com/in/dhananjay-tupe", // TODO: paste your real LinkedIn URL
   github:   "https://github.com/Djay-ui",
-  medium:   "https://medium.com/@REPLACE-WITH-YOUR-HANDLE",         // TODO: paste your real Medium URL
+  medium:   "https://medium.com/@dhananjaytupe748",         // TODO: paste your real Medium URL
 };
 
 const ARSENAL = [
@@ -29,7 +29,7 @@ const REPORTS = [
       "Integrated OSSEC for intrusion detection, alerting and log analysis during testing",
       "Documented risk severity, exploitation steps and remediation for every finding",
     ],
-    tools: ["DVWA", "Burp Suite", "OWASP ZAP", "OSSEC", "Ubuntu"],
+    tools: ["DVWA", "Burp Suite", "OWASP ZAP", "OSSEC", "Ubuntu", "Kali", "Metaspolite"],
     status: "Report delivered",
   },
   {
@@ -44,7 +44,7 @@ const REPORTS = [
     ],
     tools: ["AWS", "Jenkins", "SonarQube", "Docker", "Kubernetes", "Trivy", "Grafana"],
     status: "Live write-up",
-    link: null, // TODO: paste your Medium article URL here, e.g. "https://medium.com/@you/netflix-clone-secure-ci-cd-pipeline"
+    link: https://medium.com/@dhananjaytupe748/devsecops-netflix-clone-ci-cd-with-monitoring-email-part-1-36e2fe9bbb6f, // TODO: paste your Medium article URL here, e.g. "https://medium.com/@you/netflix-clone-secure-ci-cd-pipeline"
     linkLabel: "Read the write-up",
   },
 ];
