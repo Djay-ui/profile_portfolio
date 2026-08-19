@@ -81,3 +81,35 @@ into your LinkedIn "Featured" section or profile URL field.
 Once deployed, add the URL under **Profile → Featured** (as a link) and/or in
 your headline's "Contact info" website field, so it's visible to anyone
 viewing your profile.
+
+## 6. Publishing changes after the first deploy
+
+GitHub Pages always serves whatever is on the branch you picked in
+Settings → Pages (usually `main`). So any time you edit files locally, you
+just need to commit and push — Pages rebuilds automatically within about a
+minute, no extra steps.
+
+**If you're using git from a terminal:**
+
+```bash
+cd profile_portfolio-          # your local repo folder
+git add .
+git commit -m "Update portfolio"
+git push
+```
+
+Then wait ~30–60 seconds and refresh the live URL (use a hard refresh —
+Ctrl+Shift+R on Windows/Linux, Cmd+Shift+R on Mac — since browsers cache
+CSS/JS aggressively).
+
+**If you're using the GitHub website (no git installed):**
+
+1. Go to your repo on github.com and open the file you want to change (or
+   click **Add file → Upload files** to replace/add several at once).
+2. Make your edit, scroll down, and click **Commit changes**.
+3. That's it — Pages redeploys automatically. Give it a minute, then hard
+   refresh the live URL.
+
+**To check a deploy actually ran:** go to your repo → the **Actions** tab —
+you'll see a "pages build and deployment" run. A green check means it's live;
+a red X means something failed and clicking into it will show the error.
