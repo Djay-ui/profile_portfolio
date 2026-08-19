@@ -372,3 +372,146 @@ footer {
   color: var(--text-muted);
   border-top: 1px solid var(--border-color);
 }
+
+
+
+/* Contact Section Base with Grid Pattern Background */
+.contact-section {
+  position: relative;
+  background-color: #080c10;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  padding: 5rem 2rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Header Text */
+.section-tag {
+  color: #12d6b1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-title {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 0.8rem;
+}
+
+.contact-subtitle {
+  color: #8b949e;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 3rem;
+}
+
+/* Terminal Contact Card */
+.terminal-contact-card {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  background: #0d121b;
+  border: 1px solid #1e2633;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.terminal-contact-header {
+  background: #131924;
+  padding: 0.75rem 1.2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1e2633;
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.btn-circle {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-contact-header .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.82rem;
+  color: #6e7681;
+}
+
+.terminal-contact-body {
+  padding: 1.5rem 2.2rem;
+}
+
+/* Row Dividers */
+.contact-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px dotted #232d3d;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-row .label {
+  width: 140px;
+  color: #546072;
+  font-size: 0.95rem;
+}
+
+.contact-row .val {
+  color: #e6edf3;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-row .val:hover {
+  color: #12d6b1;
+}
+
+/* Bottom Action Button */
+.contact-action {
+  margin-top: 2rem;
+}
+
+.btn-cyan-solid {
+  display: inline-block;
+  background-color: #12d6b1;
+  color: #080c10;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(18, 214, 177, 0.2);
+}
+
+.btn-cyan-solid:hover {
+  background-color: #0fc2a0;
+  box-shadow: 0 6px 20px rgba(18, 214, 177, 0.4);
+  transform: translateY(-2px);
+}
