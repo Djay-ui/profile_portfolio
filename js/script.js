@@ -44,7 +44,7 @@ const REPORTS = [
     ],
     tools: ["AWS", "Jenkins", "SonarQube", "Docker", "Kubernetes", "Trivy", "Grafana"],
     status: "Live write-up",
-    link: null, // TODO: paste your Medium article URL here, e.g. "https://medium.com/@you/netflix-clone-secure-ci-cd-pipeline"
+    link: "https://medium.com/@dhananjaytupe748/devsecops-netflix-clone-ci-cd-with-monitoring-email-part-1-36e2fe9bbb6f", // TODO: paste your Medium article URL here, e.g. "https://medium.com/@you/netflix-clone-secure-ci-cd-pipeline"
     linkLabel: "Read the write-up",
   },
 ];
